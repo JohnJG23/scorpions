@@ -1,0 +1,61 @@
+---
+title: "ziasdata"
+author: "john"
+date: "2023-02-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r include=FALSE}
+require(tidyverse)
+require(tigerstats)
+mydata <- read.csv(file="ziasdata.csv")
+mydata$Scorpion_ID <- as.factor(mydata$Scorpion_ID)
+```
+
+#   Analysis of NumProbs
+```{r}
+boxplot(NumProbes~Scorpion_ID,data=mydata)
+```
+
+Respectively the boxplot is showing that the low intervals in correlation to the high intervals produces a mathematical difference that is significant among the differential numbers regarding to the addition of different factors like low versus high and the results in these factors which are according to the study "Numbprobes". Initially it is apparent that the results labeled as the "high" statistics equals less than the results labeled as the "low" statistics.       
+
+
+```{r}
+favstats(NumProbes~Scorpion_ID,data=mydata)
+```
+
+Interestingly the average would differ substantially. The information that the "favstats" communicates is that in the study a scorpion in a heated environment will likely sting you on average of 6.5 acts of agitation against it in comparison to a scorpion in a environment where the temperature is cooler the scorpion will likely sting you on average of 23.5 acts of agitation too the scorpion.             
+
+
+```{r}
+t.test(NumProbes~Scorpion_ID,data=mydata)
+```
+
+The importance that this test communicates is the "p-value" of this happening, the probability value at a 95 percent confidence level is 0.03651. At the bottom we see the averages of the chances we get before agitating a scorpion to the point of stinging you is in a high and low temperature.  
+
+# Analysis of TimeSting
+```{r}
+boxplot(TimeSting~Scorpion_ID,data=mydata)
+```
+
+Respectively the boxplot is showing that the low intervals in correlation to the high intervals produces a mathematical difference. Today the results are that the length of time to respond for the scorpions in the box for the low is a long response time rather than a shorter response time as it was in the time it took to respond for the scorpions in the high box.  
+
+
+```{r}
+favstats(TimeSting~Scorpion_ID,data=mydata)
+```
+
+Respectively we are now sure that there is probable estimates for the question like how much time and what is the probability of a scorpion to sting after agitating it. What this test is counting is the time and average number of agitating acts it takes for a scorpion to sting you. You are more in danger to be stung by a scorpion in hot weather than cool weather.      
+
+
+```{r}
+t.test(TimeSting~Scorpion_ID,data=mydata,conf.level=.99)
+```
+
+If we would have run more than 12 scorpions that would change the confidence level, in order to run our first experiment we know we wouldn't call it an experiment but rather a feasible study. I think what we can conclude after using our program and reading the T-test at different confidence levels is that there are differences at 95, 90, and 99 percent confidence levels but we need more variety for our respose to be more definite.      
+
