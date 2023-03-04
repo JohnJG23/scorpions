@@ -1,6 +1,6 @@
 ---
 title: "ziasdata"
-author: "john"
+author: "John Garza"
 date: "2023-02-14"
 output: html_document
 ---
@@ -57,5 +57,4 @@ Respectively we are now sure that there is probable estimates for the question l
 t.test(TimeSting~Scorpion_ID,data=mydata,conf.level=.99)
 ```
 
-If we would have run more than 12 scorpions that would change the confidence level, in order to run our first experiment we know we wouldn't call it an experiment but rather a feasible study. I think what we can conclude after using our program and reading the T-test at different confidence levels is that there are differences at 95, 90, and 99 percent confidence levels but we need more variety for our respose to be more definite.      
-
+If we would have run more than 12 scorpions that would change the confidence level, in order to run our first experiment we know we wouldn't call it an experiment but rather a feasible study. I think what we can conclude after using our program and reading the T-test at different confidence levels is that there are differences at 95, 90, and 99 percent confidence levels but we need more variety for our respose to be more definite.
